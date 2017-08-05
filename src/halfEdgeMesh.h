@@ -608,6 +608,7 @@ class Edge : public HalfedgeElement {
    * in the original mesh)
    */
   bool isNew;
+  bool isDevided;
 
   EdgeRecord record;
 
@@ -778,6 +779,8 @@ class HalfedgeMesh {
   list<Face> faces;
   list<Face> boundaries;
 
+  bool isConnected( VertexCIter v1, VertexCIter v2 );
+
 };  // class HalfedgeMesh
 
 inline Halfedge* HalfedgeElement::getHalfedge(void) {
@@ -792,6 +795,7 @@ inline Edge* HalfedgeElement::getEdge(void) {
 inline Face* HalfedgeElement::getFace(void) {
   return dynamic_cast<Face*>(this);
 }
+
 
 }  // End of CMU 462 namespace.
 

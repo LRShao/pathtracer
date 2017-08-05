@@ -19,6 +19,21 @@ class Primitive;
  */
 struct Intersection {
 
+/**
+ * Constructor.
+ * Store information about the detail of the hit.
+ * \param t the ray's t-value of the hit point
+ * \param n the normal of the surface at the hit point (interpolated normal
+ *  via barycentric coordinates
+ * \param primitive a pointer to the primitive that was hit
+ * \param bsdf a pointer to the surface brdf at the hit point
+ *  obtained via mesh->get_bsdf(); 
+ * \param is_back_hit
+ */
+
+//  Intersection(double t, Primitive* primitive, Vector3D n, BSDF* bsdf, bool is_back_hit)
+//              : t(t), primitive(primitive), n(n), bsdf(bsdf), is_back_hit(is_back_hit) {}  
+
   Intersection() : t (INF_D), primitive(NULL), bsdf(NULL) { }
 
   double t;    ///< time of intersection
@@ -30,6 +45,8 @@ struct Intersection {
   BSDF* bsdf; ///< BSDF of the surface at point of intersection
 
   // More to follow.
+
+  bool is_back_hit; ///< if the ray intersects with the back of the surface (i.e. d * n >0)
 };
 
 } // namespace StaticScene

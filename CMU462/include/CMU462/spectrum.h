@@ -62,6 +62,10 @@ class Spectrum {
     return Spectrum(r * s, g * s, b * s);
   }
 
+  inline Spectrum operator/(float s) const {
+    return Spectrum(r / s, g / s, b / s);
+  }
+
   inline Spectrum &operator*=(float s) {
     r *= s;
     g *= s;

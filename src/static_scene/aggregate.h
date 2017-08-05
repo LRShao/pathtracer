@@ -28,6 +28,9 @@ class Aggregate : public Primitive {
   // intersected and not that of the aggregate itself.
 
   std::vector<Primitive*> primitives; ///< primitives enclosed in the aggregate
+  std::vector<BBox> bboxes;
+  std::vector<Vector3D> centroids;
+  std::vector<int> binID;
 
   /**
    * Get BSDF.

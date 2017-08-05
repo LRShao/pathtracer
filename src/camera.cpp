@@ -12,6 +12,8 @@ namespace CMU462 {
 
 using Collada::CameraInfo;
 
+int counter = 0;
+
 void Camera::configure(const CameraInfo& info, size_t screenW, size_t screenH) {
   this->screenW = screenW;
   this->screenH = screenH;
@@ -30,6 +32,7 @@ void Camera::configure(const CameraInfo& info, size_t screenW, size_t screenH) {
     vFov = 2 * degrees(atan(tan(radians(hFov) / 2) / ar));
   }
   screenDist = ((double) screenH) / (2.0 * tan(radians(vFov) / 2));
+
 }
 
 void Camera::place(const Vector3D& targetPos, const double phi,
@@ -115,7 +118,27 @@ Ray Camera::generate_ray(double x, double y) const {
   // compute position of the input sensor sample coordinate on the
   // canonical sensor plane one unit away from the pinhole.
 
-  return Ray(Vector3D(0, 0, 0), Vector3D(0, 0, 1));
+  //Since this is a pin hole camera, to get an image that is not flipped
+  //coordintes have to be flipped
+  x = 1 - x;
+  y = 1 - y;   
+
+  //Assign the coordinate of the left-bottom cornor point of the screen
+  Vector3D bottomLeftCoord ( - ((double)screenW)/2, - ((double)screenH)/2, screenDist);
+  
+  //Convert x,y back to screen position??
+  double xRelative = x * screenW,
+         yRelative = y * screenH;
+
+  Vector3D oCameraCoord ( bottomLeftCoord.x + xRelative, bottomLeftCoord.y + yRelative, bottomLeftCoord.z);
+  
+  //Since d is the direction, better normalize it by using .unit() function 
+  Vector3D dCameraCoord = ( - oCameraCoord ).unit();   
+ 
+  Vector3D oWorldCoord = pos + c2w * oCameraCoord;
+  Vector3D dWorldCoord = c2w * dCameraCoord;
+
+  return Ray( oWorldCoord , dWorldCoord );
 }
 
 

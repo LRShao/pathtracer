@@ -94,6 +94,9 @@ class BSDF {
    */
   virtual bool is_delta() const = 0;
 
+  //helper when deternmining cos_wi
+  virtual bool is_translucent() const = 0;
+
   /**
    * Reflection helper
    */
@@ -118,6 +121,7 @@ class DiffuseBSDF : public BSDF {
   Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
   Spectrum get_emission() const { return Spectrum(); }
   bool is_delta() const { return false; }
+  bool is_translucent() const { return false; }
 
 private:
 
@@ -138,6 +142,7 @@ class MirrorBSDF : public BSDF {
   Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
   Spectrum get_emission() const { return Spectrum(); }
   bool is_delta() const { return true; }
+  bool is_translucent() const { return false; }
 
 private:
 
@@ -181,6 +186,7 @@ class RefractionBSDF : public BSDF {
   Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
   Spectrum get_emission() const { return Spectrum(); }
   bool is_delta() const { return true; }
+  bool is_translucent() const { return true; }
 
  private:
 
@@ -205,6 +211,7 @@ class GlassBSDF : public BSDF {
   Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
   Spectrum get_emission() const { return Spectrum(); }
   bool is_delta() const { return true; }
+  bool is_translucent() const { return true; }
 
  private:
 
@@ -227,6 +234,7 @@ class EmissionBSDF : public BSDF {
   Spectrum sample_f(const Vector3D& wo, Vector3D* wi, float* pdf);
   Spectrum get_emission() const { return radiance; }
   bool is_delta() const { return false; }
+  bool is_translucent() const { return false; }
 
  private:
 

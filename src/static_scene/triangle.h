@@ -3,6 +3,7 @@
 
 #include "object.h"
 #include "primitive.h"
+#include <cmath>
 
 namespace CMU462 { namespace StaticScene {
 

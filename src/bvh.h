@@ -29,6 +29,7 @@ struct BVHNode {
   BBox bb;        ///< bounding box of the node
   size_t start;   ///< start index into the primitive list
   size_t range;   ///< range of index into the primitive list
+                  /// here range is considered to be the size of the node
   BVHNode* l;     ///< left child node
   BVHNode* r;     ///< right child node
 };
@@ -118,6 +119,15 @@ class BVHAccel : public Aggregate {
 
  private:
   BVHNode* root; ///< root node of the BVH
+  size_t max_leaf_size;
+  
+ //Additional private funtion to recursively find the closest hit point 
+ bool find_closest_hit(const Ray& ray, const BVHNode* node, Intersection& iClosest) const;
+ //Additional private funtion to recursively construct BVHAccel aggregate
+ void partition_node( BVHNode* node );
+ //Additional private funtion to recursively destruct BVHAccel aggregate
+ void delete_node(BVHNode* node);
+
 };
 
 } // namespace StaticScene

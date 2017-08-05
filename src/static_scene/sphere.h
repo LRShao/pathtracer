@@ -81,6 +81,13 @@ class Sphere : public Primitive {
   * Draw outline with OpenGL (for visualizer)
   */
   void drawOutline(const Color& c) const;
+  
+  double area() const
+  { 
+     const double Pi = 3.14159;
+     double s = 4 * Pi * r * r; 
+     return s;
+  }
 
  private:
 
