@@ -23,7 +23,7 @@ Below are some of the images rendered by this simple pathtracer.
 
 ![](http://imglf1.nosdn.127.net/img/L3pWV1luYk9ob2N1MUZpY2tpK0NKUU1TdE9qT3g1dGRoRzZ5Y2pST0M1cVZDMmlQZ29sMnhRPT0.png?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg "Task5: Adding Path Tracing")
 
-## Task 6:Adding New Materials( Perfect Mirror and Glass )
+## Task 6: Adding New Materials( Perfect Mirror and Glass )
 These pictures have visible noise and artifacts, probably due to low sampling rate.
 
-![](http://imglf.nosdn.127.net/img/L3pWV1luYk9ob2N1MUZpY2tpK0NKUzdaZ3g3eThpdGlTdjQyT1A0RzdJNWhSUjdJRThWb2VRPT0.png?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg "Task 6:Adding New Materials( Perfect Mirror and Glass)")
+![](http://imglf.nosdn.127.net/img/L3pWV1luYk9ob2N1MUZpY2tpK0NKUzdaZ3g3eThpdGlTdjQyT1A0RzdJNWhSUjdJRThWb2VRPT0.png?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg "Task 6: Adding New Materials( Perfect Mirror and Glass)")
