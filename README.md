@@ -3,7 +3,7 @@ Bone and frame of the source code is provided by the assignment, with some core 
 
 http://462cmu.github.io/asst3_pathtracer/
 
-some of the pictures produced by this simple pathtracer, which still has some noise and artifacts, probably due to the low sample rate.
+Below are some of the images rendered by this simple pathtracer.
 
 ## Task 1-3: Implementing a Bounding Volume Hierarchy (BVH)
 ### Utah Teapot
@@ -24,5 +24,6 @@ some of the pictures produced by this simple pathtracer, which still has some no
 ![](http://imglf1.nosdn.127.net/img/L3pWV1luYk9ob2N1MUZpY2tpK0NKUU1TdE9qT3g1dGRoRzZ5Y2pST0M1cVZDMmlQZ29sMnhRPT0.png?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg "Task5: Adding Path Tracing")
 
 ## Task 6:Adding New Materials( Perfect Mirror and Glass )
+These pictures have visible noise and artifacts, probably due to low sample rate.
 
 ![](http://imglf.nosdn.127.net/img/L3pWV1luYk9ob2N1MUZpY2tpK0NKUzdaZ3g3eThpdGlTdjQyT1A0RzdJNWhSUjdJRThWb2VRPT0.png?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg "Task 6:Adding New Materials( Perfect Mirror and Glass)")
