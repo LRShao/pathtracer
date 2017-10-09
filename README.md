@@ -1,5 +1,5 @@
 # PathTracer
-Bone and frame of the source code is provided by the assignment, with some core functions implemented by me independently following instructions. You can refer to the original project page for further information.
+Skeleton of the code is provided by the assignment, with some core functions implemented by me independently following instructions. You can refer to the original project page for further information.
 
 http://462cmu.github.io/asst3_pathtracer/
 
